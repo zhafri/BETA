@@ -4,39 +4,39 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet">
-<link href="https://vjs.zencdn.net/7.8.2/video-js.min.css" rel="stylesheet">
-<link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
-<link href="https://unpkg.com/@videojs/themes@1/dist/city/index.css" rel="stylesheet">
-<script src="https://vjs.zencdn.net/7.8.2/video.min.js"></script>
+<link href="https://unpkg.com/cloudinary-video-player@1.9.0/dist/cld-video-player.min.css" rel="stylesheet">
+<script src="https://unpkg.com/cloudinary-video-player@1.9.0/dist/cld-video-player.min.js" type="text/javascript"></script>
 <title>TV3</title>
 
 <style>
-body {background-color: darkgrey;
-margin: 0;
+body {background: darkgrey;
+margin: auto;
 padding: 0;
-width: 100%;
-height: 100%;}
-.center {position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 100%}
+font-size: 100%;
+height: 100%;
+display: grid;
+align-items: center;
+text-align: center;}
 </style>
 
 </head>
 <body>
 
-<div class="center"> 
-<video id="my_video_1" class="video-js vjs-fluid vjs-big-play-centered video-js vjs-theme-city { width: 86% !important; }" 
-controls autoplay="play" preload="auto" data-setup='{"liveui": true, "liveTracker":true}' object="{navigationUI: 'hide'}">
-<source src="https://live-sg1.global.ssl.fastly.net/live-hls/tonton1_720p/index.m3u8" type="application/x-mpegURL">
+<div style="max-width: 100%">
+<video id="doc-player" autoplay controls 
+class="cld-video-player cld-fluid cld-video-player-skin-dark data-cld-public-id='oceans'">
+<source src="https://live-sg1.global.ssl.fastly.net/live-hls/tonton1_720p/index.m3u8" type="application/x-mpegURL">  
 </video>
 </div>
 
-<script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
-<script src="https://unpkg.com/video.js/dist/video.js"></script>
-<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+<!-- Custom player -->
+<!-- https://cloudinary.com/documentation/video_player_customization -->
+
+<script>
+var demoplayer = cloudinary.videoPlayer('doc-player', { 
+cloud_name: 'Video-Name' });
+demoplayer.source('Player-Name')
+</script>
 
 </body>
 </html>
