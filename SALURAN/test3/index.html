@@ -2,7 +2,7 @@
     <title>TV3</title>
   <style>
         body {
-            background-color: black;
+            background-color: darkgrey;
         }
         #video {
             position: absolute;
@@ -23,7 +23,7 @@
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 
-<video id="video" controls>
+<video id="video" autoplay controls>
 <script>
   if (Hls.isSupported()) {
     var video = document.getElementById('video');
@@ -40,7 +40,7 @@
     // bind them together
     hls.attachMedia(video);
   }
-    video.play();
+    
 </script>
      
   </body>
