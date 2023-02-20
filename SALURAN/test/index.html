@@ -17,7 +17,6 @@ text-align: center;
 #doc-player {
    
     position: fixed;
-    overflow: hidden;
     top: 0px;
     left: 0px;
     right: 0px;
@@ -30,12 +29,12 @@ text-align: center;
 </head>
 <body>
 
-<div style="width: 1280px; height: 720px">
-<video id="doc-player" autoplay controls 
+
+<video id="doc-player" autoplay controls style="width: 1280px; height: 720px"
 class="cld-video-player cld-fluid cld-video-player-skin-dark data-cld-public-id='oceans'">
 <source src="https://live-sg1.global.ssl.fastly.net/live-hls/tonton1_720p/index.m3u8" type="application/x-mpegURL">  
 </video>
-</div>
+
 
 <!-- Custom player -->
 <!-- https://cloudinary.com/documentation/video_player_customization -->
