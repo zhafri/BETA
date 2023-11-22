@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- for non-UI builds: -->
-<script src="https://ajax.googleapis.com/ajax/libs/shaka-player/3.2.0/shaka-player.compiled.js"></script>
-<!-- or, for UI builds: -->
-<script src="https://ajax.googleapis.com/ajax/libs/shaka-player/3.2.0/shaka-player.ui.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/shaka-player/3.2.0/controls.css" />
+    <meta name="referrer" content="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.6/shaka-player.ui.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.6/controls.min.css" crossorigin="anonymous" />
+</script>
 
 <title>KBS WORLD</title>
 
@@ -25,19 +20,18 @@
     background: black;
     align-items: center;
     text-align: center;
-   
+    
   }
  
  #video {
     position: fixed;
     overflow: hidden;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin: auto;
     border: 4px solid orange;
-    
   }
 </style>
 
@@ -45,7 +39,8 @@
 <body>
  <br>
  <br>
-  <h1 style="background-color:#FFD700; width: 1280px; margin: auto;font-family:Comic Sans MS;border-radius: 15px;border-style: groove; border-color:Fuchsia;opacity:0.8">KBS WORLD</h1>
+   <h1 style="background-color:#FFD700; width: 1280px; margin: auto;font-family:Comic Sans MS;border-radius: 15px;border-style: groove; border-color:Fuchsia;opacity:0.8">HBO FAMILY</h1>
+ 
  <div id="video" data-shaka-player-container style="width: 1280px; height: 720px; border: 4px double #FFD700; margin: auto; top: 0px; left: 0px; right: 0px; bottom: 0px; position: fixed; border-radius: 5px;opacity:0.8" data-shaka-player-cast-receiver-id="1BA79154" data-shaka-player-cast-android-receiver-compatible="true">
   <!-- The data-shaka-player tag will make the UI library use this video element.
 If no video is provided, the UI will automatically make one inside the container div. -->
@@ -72,6 +67,10 @@ If no video is provided, the UI will automatically make one inside the container
         },
       },
     });
+   
+   player.configure({
+  preferredTextLanguage: 'ms',
+  });
    
    //Closed caption is ON
    player.setTextTrackVisibility(true);
